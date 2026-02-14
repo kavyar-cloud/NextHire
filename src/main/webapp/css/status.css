@@ -1,0 +1,141 @@
+/* status.css */
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f5f7fa;
+    margin: 0;
+}
+
+.page-content {
+    margin-top: 90px; /* height of navbar */
+    padding: 20px;
+}
+
+
+/* Navigation buttons */
+.nav-buttons {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.nav-buttons .btn {
+    min-width: 150px;
+}
+
+.page-container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+
+.header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.header h2 {
+    color: #007bff;
+    font-size: 28px;
+}
+
+.back-btn {
+    display: inline-block;
+    margin-bottom: 20px;
+    color: #007bff;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.back-btn:hover {
+    text-decoration: underline;
+}
+
+/* Application card */
+.app-card {
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.app-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+}
+
+/* Job title / role */
+.app-title {
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #333333;
+}
+
+/* Details: Company, Applied On, Status */
+.app-details p {
+    margin: 4px 0;
+    font-size: 16px;
+    color: #555555;
+}
+
+.app-details strong {
+    color: #333333;
+}
+
+/* Status badge */
+.status-badge {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #fff;
+}
+
+/* .status-applied { background-color: #007bff; }
+.status-pending { background-color: #ffc107; }
+.status-selected { background-color: #28a745; }
+.status-rejected { background-color: #dc3545; }
+.status-withdrawn { background-color: #6c757d; } */
+
+.status-pending { background: #ffc107; color: #000; }
+.status-shortlisted { background: #0d6efd; color: white; }
+.status-rejected { background: #dc3545; color: white; }
+.status-withdrawn { background: #6c757d; color: white; }
+
+
+/* Withdraw button */
+.actions {
+    margin-top: 12px;
+}
+
+.btn-withdraw {
+    background-color: #dc3545;
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.btn-withdraw:hover {
+    background-color: #c82333;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .app-title {
+        font-size: 20px;
+    }
+    .app-details p {
+        font-size: 14px;
+    }
+    .btn-withdraw {
+        padding: 6px 12px;
+        font-size: 13px;
+    }
+}

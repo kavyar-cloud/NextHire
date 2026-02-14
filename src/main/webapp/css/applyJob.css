@@ -1,0 +1,149 @@
+/* style.css */
+
+/* Body and container */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8f9fa;
+    padding-top: 80px; /* space for fixed navbar */
+}
+
+/* Navbar */
+.navbar {
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.navbar-brand {
+    font-weight: bold;
+}
+
+.nav-link {
+    color: #ffffff !important;
+}
+
+/* Headings */
+h2 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+h5 {
+    margin-top: 30px;
+    margin-bottom: 15px;
+    font-weight: 500;
+}
+
+/* Job info section */
+p {
+    font-size: 1rem;
+    margin-bottom: 8px;
+}
+
+p b {
+    color: #333333;
+}
+
+/* Form styling */
+form {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.05);
+    margin-bottom: 50px;
+}
+
+input.form-control,
+textarea.form-control {
+    border-radius: 6px;
+    border: 1px solid #ced4da;
+    padding: 10px;
+    font-size: 0.95rem;
+}
+
+input.form-control:focus,
+textarea.form-control:focus {
+    border-color: #0d6efd;
+    box-shadow: 0 0 5px rgba(13,110,253,0.3);
+}
+
+textarea.form-control {
+    resize: vertical;
+}
+
+/* Buttons */
+.btn-primary {
+    background-color: #0d6efd;
+    border: none;
+}
+
+.btn-primary:hover {
+    background-color: #0b5ed7;
+}
+
+.btn-secondary {
+    background-color: #6c757d;
+    border: none;
+}
+
+.btn-secondary:hover {
+    background-color: #5c636a;
+}
+
+form {
+    background-color: #fdfdfd;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+}
+
+label {
+    font-weight: 600;
+    color: #333;
+}
+
+.btn-success {
+    background-color: #28a745;
+    border: none;
+}
+
+.btn-success:hover {
+    background-color: #218838;
+}
+
+.btn-outline-secondary:hover {
+    background-color: #6c757d;
+    color: #fff;
+}
+
+.card {
+    border-radius: 10px;
+    background-color: #ffffff;
+}
+
+.card-title {
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.card-subtitle {
+    font-size: 1rem;
+    margin-bottom: 15px;
+}
+
+.card-body p {
+    font-size: 0.95rem;
+    margin-bottom: 8px;
+}
+
+.card-body i {
+    color: #0d6efd; /* Bootstrap blue for icons */
+    margin-right: 6px;
+}
+
+
+
+/* Responsive spacing */
+@media (max-width: 768px) {
+    .row > .col-md-6 {
+        margin-bottom: 15px;
+    }
+}

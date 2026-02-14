@@ -1,0 +1,47 @@
+body {
+    background-color: #f8f9fa;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding-top: 120px;  
+}
+
+/* Header section */
+.dashboard-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.dashboard-header h2 {
+    font-weight: 600;
+    color: #0d6efd;
+}
+
+.dashboard-header p {
+    font-size: 1rem;
+    color: #6c757d;
+}
+
+.job-form {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+}
+
+.job-form .form-label {
+    font-weight: 500;
+}
+
+.navbar-brand {
+    font-weight: bold;
+}
+.nav-buttons {
+    text-align: center;
+    margin-bottom: 40px;
+    margin-top: 20px;
+    position: relative; /* ensure it’s positioned */
+    z-index: 1050;
+}
+
+.nav-buttons .btn {
+    min-width: 150px;
+}
