@@ -15,30 +15,30 @@ This project is currently under **active development**. Features are being added
 
 - Recruiter profile management (company details, logo, resume uploads) 
 - Job posting and listing with role separation (recruiter vs. job seeker) 
--> User authentication and session management 
--> Resume upload and applicant tracking 
--> Clean UI with JSP, CSS, and modular design 
--> Database integration with Hibernate and PostgreSQL 
+- User authentication and session management 
+- Resume upload and applicant tracking 
+- Clean UI with JSP, CSS, and modular design 
+- Database integration with Hibernate and PostgreSQL 
 
 ---
 
 ## 📌 Planned Features 
 
--> Advanced search and filtering for jobs 
--> Email notifications for applicants 
--> Recruiter dashboards with analytics 
--> REST API endpoints for integration 
--> Improved UI/UX with responsive design
+- Advanced search and filtering for jobs 
+- Email notifications for applicants 
+- Recruiter dashboards with analytics 
+- REST API endpoints for integration 
+- Improved UI/UX with responsive design
 
 ---
 
 ## 🛠 Tech Stack 
   
--> **Backend**: Java Servlets, Hibernate, JDBC 
--> **Frontend**: JSP, HTML, CSS, JavaScript 
--> **Database**: PostgreSQL 
--> **Build Tool**: Maven 
--> **Server**: Apache Tomcat
+- **Backend**: Java Servlets, Hibernate, JDBC 
+- **Frontend**: JSP, HTML, CSS, JavaScript 
+- **Database**: PostgreSQL 
+- **Build Tool**: Maven 
+- **Server**: Apache Tomcat
 
 ---
 
