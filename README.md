@@ -44,7 +44,7 @@ This project is currently under **active development**. Features are being added
 
 ## ⚙️ Setup Instructions 
 
-1. Clone the repository: ```bash git clone https://github.com/kavyar-cloud/JobPortal.git
+1. Clone the repository: ```bash git clone https://github.com/kavyar-cloud/NextHire.git
 
 2. Import into IntelliJ IDEA or VS Code.
 
