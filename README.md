@@ -13,8 +13,8 @@ This project is currently under **active development**. Features are being added
 
 ## 🚀 Current Features
 
--> Recruiter profile management (company details, logo, resume uploads) 
--> Job posting and listing with role separation (recruiter vs. job seeker) 
+- Recruiter profile management (company details, logo, resume uploads) 
+- Job posting and listing with role separation (recruiter vs. job seeker) 
 -> User authentication and session management 
 -> Resume upload and applicant tracking 
 -> Clean UI with JSP, CSS, and modular design 
