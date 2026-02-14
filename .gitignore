@@ -43,3 +43,7 @@ build/
 
 # User uploads (optional, runtime files)
 uploads/
+
+out/
+artifacts/
+
