@@ -13,30 +13,20 @@ public class JobDao {
     // Save a new job
     public void saveJob(Job job) {
         Transaction tx = null;
-        Session session = null;
-
-        try {
-            session = HibernateUtil.getSessionFactory().openSession();
+        try (Session session = HibernateUtil.getSessionFactory().openSession()) {
             tx = session.beginTransaction();
-
-            session.persist(job); // or session.save(job);
-            session.flush();      // ✅ forces Hibernate to assign ID
-            tx.commit();
-
-            System.out.println("Job saved successfully: " + job.getTitle());
-
-        }catch (Exception e) {
-                if (tx != null) {
-                    tx.rollback();
-                }
-                e.printStackTrace();
-
-        } finally {
-            if (session != null && session.isOpen()) {
-                session.close();
-            }
+            
+            session.persist(job);  
+            tx.commit();       
+            
+            System.out.println("✅ Job saved successfully: " + job.getTitle());
+        } catch (Exception e) {
+            if (tx != null) tx.rollback();
+            e.printStackTrace();
+            System.out.println("❌ Failed to save job: " + job.getTitle());
         }
     }
+    
 
 
 

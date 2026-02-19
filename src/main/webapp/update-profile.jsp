@@ -22,10 +22,9 @@
 </head>
 
 <body>
-
-    <body><nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
         <div class="container">
-            <a class="navbar-brand" href="#">JobPortal</a>
+            <a class="navbar-brand" href="#">NextHire</a>
             <div class="collapse navbar-collapse">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
@@ -35,6 +34,8 @@
             </div>
         </div>
     </nav>
+    
+        
 
 <div class="profile-wrapper">
 
@@ -43,10 +44,13 @@
         <div class="profile-box">
 
             <!-- PROFILE IMAGE -->
-            <img src="<%= user.getPhoto() != null 
-              ? request.getContextPath() + "/" + user.getPhoto() 
-              : request.getContextPath() + "/images/profile.jpg" %>" 
-                class="profile-img" alt="Profile Photo">
+            <img src="<%= (user.getPhoto() != null && !user.getPhoto().isEmpty()) 
+            ? request.getContextPath() + "/" + user.getPhoto()
+            : request.getContextPath() + "/images/profile.jpg" %>"
+         class="profile-img"
+         alt="Profile Photo"
+         onerror="this.src='<%= request.getContextPath() %>/images/profile.jpg'">
+    
 
 
             <h5 class="mt-3"><%= user.getName() %></h5>
@@ -143,11 +147,11 @@
                         <label class="form-label">Profile Photo (optional)</label>
                         <input type="file" name="photo" class="form-control" accept="image/*">
                         <% if (user.getPhoto() != null) { %>
-                        <small class="text-muted">
+                        <!-- <small class="text-muted">
                             Current: <a href="<%= request.getContextPath() + "/" + user.getPhoto() %>" target="_blank">
                             View Photo
                             </a>
-                        </small>
+                        </small> -->
                         <% } %>
                     </div>
 

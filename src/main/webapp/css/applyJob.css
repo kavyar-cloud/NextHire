@@ -33,6 +33,11 @@ h5 {
     font-weight: 500;
 }
 
+.job-description {
+    white-space: pre-line;
+}
+
+
 /* Job info section */
 p {
     font-size: 1rem;

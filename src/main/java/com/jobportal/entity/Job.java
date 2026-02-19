@@ -21,6 +21,7 @@ public class  Job {
     private String title;
     private String company;
     private String location;
+    @Column(name = "description", columnDefinition = "TEXT")
     private String description;
     private String status;
     @Column(name = "recruiter_id")
@@ -88,15 +89,7 @@ public class  Job {
         this.postedBy = postedBy;
     }
 
-    public Job() {}
 
-
-    public Job(String title, String company, String location, String description) {
-        this.title = title;
-        this.company = company;
-        this.location = location;
-        this.description = description;
-    }
 
 
     public String getSkills() {
@@ -121,5 +114,18 @@ public class  Job {
 
     public void setExperience(Integer experience) {
         this.experience = experience;
+    }
+
+    public Job() {}
+
+
+    public Job(String title, String company, String location, String description, Integer experience, String skills, String salaryRange) {
+        this.title = title;
+        this.company = company;
+        this.location = location;
+        this.description = description;
+        this.experience = experience;
+        this.skills = skills;
+        this.salaryRange = salaryRange;
     }
 }

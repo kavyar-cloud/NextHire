@@ -11,8 +11,16 @@
         return;
     }
 
+    String jobIdParam = request.getParameter("jobId");
+    if (jobIdParam == null) {
+        response.sendRedirect("recruiterDashboard.jsp");
+        return;
+    }
+
+    int jobId = Integer.parseInt(jobIdParam);
+
     ApplicationDao dao = new ApplicationDao();
-    List<ApplicationView> apps = dao.getApplicationsByRecruiter(recruiter.getId());
+    List<ApplicationView> apps = dao.getApplicationsByJobAndRecruiter(jobId, recruiter.getId());
 %>
 
 <!DOCTYPE html>
@@ -23,100 +31,108 @@
     <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
-    <style>
-        body { padding-top: 70px; }
-        .action-btns form { display: inline; }
-    </style>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/view-applicants.css">
 </head>
 
-<body class="bg-light">
+<body>
 
 <!-- NAVBAR -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
     <div class="container">
-        <a class="navbar-brand" href="#">JobPortal</a>
-        <div class="collapse navbar-collapse">
-            <ul class="navbar-nav ms-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="logout.jsp">Logout</a>
-                </li>
-            </ul>
-        </div>
+        <a class="navbar-brand" href="recruiterDashboard.jsp">NextHire</a>
+        <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="logout.jsp">Logout</a>
+            </li>
+        </ul>
     </div>
 </nav>
 
-<div class="container">
+<div class="container main-container">
 
-    <h2 class="mb-4">Applicants for My Jobs</h2>
+    <h2 class="page-title mb-4">Applicants for This Job</h2>
 
     <% if (apps == null || apps.isEmpty()) { %>
+
         <div class="alert alert-info">
-            No applications received yet.
+            No applications received for this job yet.
         </div>
+
     <% } else { %>
 
         <% for (ApplicationView app : apps) { %>
 
-            <div class="card mb-3 shadow-sm">
+            <div class="card applicant-card mb-4 shadow-sm">
                 <div class="card-body">
 
-                    <!-- JOB TITLE -->
+                    <!-- Job Title -->
                     <h5 class="card-title">
                         <%= app.getJobTitle() %>
                         <small class="text-muted">at <%= app.getCompany() %></small>
                     </h5>
 
-                    <!-- APPLICANT DETAILS -->
-                    <p class="mb-1">
-                        <strong>Applicant:</strong> <%= app.getApplicantName() %>
-                    </p>
+                    <hr>
 
-                    <p class="mb-1">
-                        <strong>Email:</strong> <%= app.getApplicantEmail() %>
-                    </p>
+                    <!-- Applicant Details -->
+                    <div class="row mb-2">
+                        <div class="col-md-6">
+                            <p><strong>Name:</strong> <%= app.getApplicantName() %></p>
+                        </div>
+                        <div class="col-md-6">
+                            <p><strong>Email:</strong> <%= app.getApplicantEmail() %></p>
+                        </div>
+                    </div>
 
-                    <!-- STATUS -->
-                    <p class="mb-2">
+                    <%
+                        String statusClass = "badge-pending";
+
+                        if ("SHORTLISTED".equalsIgnoreCase(app.getStatus())) {
+                            statusClass = "badge-shortlisted";
+                        } else if ("REJECTED".equalsIgnoreCase(app.getStatus())) {
+                            statusClass = "badge-rejected";
+                        } else if ("WITHDRAWN".equalsIgnoreCase(app.getStatus())) {
+                            statusClass = "badge-withdrawn";
+                        }
+                    %>
+
+                    <p>
                         <strong>Status:</strong>
-                        <span class="badge bg-secondary">
+                        <span class="badge badge-status <%= statusClass %>">
                             <%= app.getStatus() %>
                         </span>
                     </p>
 
-                    <!-- DATE -->
-                    <p class="text-muted small mb-3">
+                    <p class="text-muted small">
                         Applied on: <%= app.getAppliedAt() %>
                     </p>
 
-                    <!-- ACTIONS -->
-                    <div class="action-btns">
+                    <!-- ACTION BUTTONS -->
+                    <div class="mt-3">
 
-                        <!-- DOWNLOAD RESUME -->
                         <a href="viewResume?applicationId=<%= app.getApplicationId() %>"
                            target="_blank"
-                           class="btn btn-sm btn-primary">
+                           class="btn btn-primary btn-sm">
                             Download Resume
                         </a>
 
-                        <% if ("Pending".equalsIgnoreCase(app.getStatus())) { %>
+                        <% if ("PENDING".equalsIgnoreCase(app.getStatus())) { %>
 
-                            <!-- SHORTLIST -->
                             <form action="updateApplicationStatus" method="post" class="d-inline">
                                 <input type="hidden" name="applicationId" value="<%= app.getApplicationId() %>">
-                                <input type="hidden" name="status" value="Shortlisted">
-                                <button type="submit" class="btn btn-sm btn-success">
+                                <input type="hidden" name="status" value="SHORTLISTED">
+                                <button type="submit" class="btn btn-success btn-sm ms-2">
                                     Shortlist
                                 </button>
                             </form>
-                            
-                            <form action="updateApplicationStatus" method="post" class="d-inline ms-2">
+
+                            <form action="updateApplicationStatus" method="post" class="d-inline">
                                 <input type="hidden" name="applicationId" value="<%= app.getApplicationId() %>">
-                                <input type="hidden" name="status" value="Rejected">
-                                <button type="submit" class="btn btn-sm btn-danger">
+                                <input type="hidden" name="status" value="REJECTED">
+                                <button type="submit" class="btn btn-danger btn-sm ms-2">
                                     Reject
                                 </button>
                             </form>
-                            
 
                         <% } %>
 

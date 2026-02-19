@@ -19,7 +19,6 @@
 
     JobDao jobDao = new JobDao();
     ApplicationDao appDao = new ApplicationDao();
-
     List<Job> jobs = jobDao.getAllJobs();
 %>
 
@@ -39,7 +38,8 @@
 <!-- NAVBAR -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
     <div class="container">
-        <a class="navbar-brand" href="#">JobPortal</a>
+        <a class="navbar-brand" href="#">NextHire</a>
+
         <ul class="navbar-nav ms-auto">
             <li class="nav-item">
                 <span class="nav-link">Welcome, <%= user.getName() %></span>
@@ -51,22 +51,21 @@
     </div>
 </nav>
 
-<div class="container mt-5 pt-4">
+<div class="container main-content">
 
     <!-- HEADER -->
-    <div class="dashboard-header mb-4">
+    <div class="dashboard-header">
         <h2>Welcome, <%= user.getName() %> 👋</h2>
     </div>
 
     <!-- ACTION BUTTONS -->
-    <div class="mb-4 text-center action-buttons">
+    <div class="text-center action-buttons">
         <a href="status.jsp" class="btn btn-outline-primary me-2">My Applications</a>
         <a href="update-profile.jsp" class="btn btn-outline-warning me-2">Update Profile</a>
         <a href="logout.jsp" class="btn btn-outline-secondary">Logout</a>
     </div>
-    
 
-    <h3 class="mb-4">Available Jobs</h3>
+    <h3 class="mb-4 mt-4">Available Jobs</h3>
 
     <% if (jobs.isEmpty()) { %>
         <div class="alert alert-info">
@@ -85,12 +84,6 @@
 
             <h4 class="card-title"><%= job.getTitle() %></h4>
 
-            <p class="card-text">
-                <%= job.getDescription() != null
-                        ? job.getDescription()
-                        : "Job description not provided" %>
-            </p>
-
             <p>
                 <strong>Company:</strong>
                 <%= job.getCompany() != null ? job.getCompany() : "Not specified" %>
@@ -102,16 +95,20 @@
             </p>
 
             <!-- APPLY / APPLIED -->
-            <% if (alreadyApplied) { %>
-                <span class="btn-applied">
-                    ✔ Applied
-                </span>
-            <% } else { %>
-                <a href="apply-job.jsp?jobId=<%= job.getId() %>"
-                   class="btn btn-success btn-apply-now">
-                    Apply Now
-                </a>
-            <% } %>
+            <div class="applied-container mt-3">
+                <% if (alreadyApplied) { %>
+                    <span class="job-btn btn-applied">
+                        Applied
+                    </span>
+                <% } else { %>
+                    <a href="apply-job.jsp?jobId=<%= job.getId() %>"
+                       class="job-btn btn-apply">
+                        Apply Now
+                    </a>
+                <% } %>
+            </div>
+            
+            
 
         </div>
     </div>

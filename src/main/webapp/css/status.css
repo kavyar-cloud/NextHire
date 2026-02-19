@@ -98,14 +98,17 @@ body {
 /* .status-applied { background-color: #007bff; }
 .status-pending { background-color: #ffc107; }
 .status-selected { background-color: #28a745; }
-.status-rejected { background-color: #dc3545; }
+.status-rejected { background-color: #dc3545; } 
 .status-withdrawn { background-color: #6c757d; } */
 
 .status-pending { background: #ffc107; color: #000; }
 .status-shortlisted { background: #0d6efd; color: white; }
 .status-rejected { background: #dc3545; color: white; }
 .status-withdrawn { background: #6c757d; color: white; }
-
+.status-viewed {
+    background-color: #0dcaf0;
+    color: rgb(255, 255, 255);
+}
 
 /* Withdraw button */
 .actions {

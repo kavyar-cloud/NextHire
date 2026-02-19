@@ -53,13 +53,15 @@ public class UpdateRecruiterProfileServlet extends HttpServlet {
         Part logo = req.getPart("logo");
         Part profileDoc = req.getPart("profileDoc");
 
+        // 🔥 SAVE LOGO
         if (logo != null && logo.getSize() > 0) {
-            String logoPath = FileUploadUtil.save(logo);
+            String logoPath = FileUploadUtil.save(logo, getServletContext());
             profile.setLogo(logoPath);
         }
 
+        // 🔥 SAVE PROFILE DOCUMENT
         if (profileDoc != null && profileDoc.getSize() > 0) {
-            String docPath = FileUploadUtil.save(profileDoc);
+            String docPath = FileUploadUtil.save(profileDoc, getServletContext());
             profile.setProfileDoc(docPath);
         }
 
@@ -70,7 +72,7 @@ public class UpdateRecruiterProfileServlet extends HttpServlet {
         RecruiterProfile updatedProfile = dao.findByUserId(user.getId());
         session.setAttribute("recruiterProfile", updatedProfile);
 
-        // Redirect with success flag
         resp.sendRedirect("update-recruiter.jsp?success=true");
     }
 }
+    

@@ -41,6 +41,10 @@ public class PostJobServlet extends HttpServlet {
         String location = request.getParameter("location");
         String description = request.getParameter("description");
         String status = request.getParameter("status");
+        String experienceStr = request.getParameter("experience"); Integer experience = (experienceStr != null && !experienceStr.isEmpty()) ? Integer.parseInt(experienceStr) : null;
+        String skills = request.getParameter("skills");
+        String salaryRange = request.getParameter("salaryRange");
+
 
         // ✅ Create Job object
         Job job = new Job();
@@ -48,9 +52,12 @@ public class PostJobServlet extends HttpServlet {
         job.setCompany(company);
         job.setLocation(location);
         job.setDescription(description);
-        job.setStatus("OPEN");
+        job.setStatus(status);
         System.out.println("🔥 FINAL STATUS VALUE = [" + job.getStatus() + "]");
         job.setPostedBy(recruiter.getId());
+        job.setExperience(experience); 
+        job.setSkills(skills); 
+        job.setSalaryRange(salaryRange);
 
         // ✅ Save to DB
         jobDao.saveJob(job);

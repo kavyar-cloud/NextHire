@@ -55,7 +55,9 @@ public class ApplyServlet extends HttpServlet {
         app.setUserId(user.getId());
         app.setResumePath("resumes/" + fileName);
         app.setStatus("Pending");
-        app.setAppliedAt(LocalDateTime.now());app.setEmail(request.getParameter("email"));
+        app.setAppliedAt(LocalDateTime.now());
+        app.setFullName(request.getParameter("fullName"));
+        app.setEmail(request.getParameter("email"));
         app.setPhone(request.getParameter("phone"));
         app.setExperience(Integer.parseInt(request.getParameter("experience")));
         app.setSkills(request.getParameter("skills"));

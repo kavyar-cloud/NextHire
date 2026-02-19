@@ -1,5 +1,35 @@
 body {
-    background-color: #f8f9fa;
+    background: linear-gradient(135deg, #eef2f7, #d9e4f5);
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    min-height: 100vh;
 }
 
+.custom-navbar {
+    background: linear-gradient(90deg, #1f2937, #111827);
+}
+
+.dashboard-wrapper {
+    padding: 60px 0;
+}
+
+.card {
+    border-radius: 12px;
+}
+
+.table thead th {
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.table tbody tr:hover {
+    background-color: #f5f9ff;
+    transition: 0.3s ease;
+}
+
+.btn {
+    border-radius: 8px;
+}
+
+.badge {
+    font-size: 0.8rem;
+}

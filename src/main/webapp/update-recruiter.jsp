@@ -32,7 +32,7 @@
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
     <div class="container">
-        <a class="navbar-brand" href="#">JobPortal</a>
+        <a class="navbar-brand" href="#">NextHire</a>
         <ul class="navbar-nav ms-auto">
             <li class="nav-item">
                 <a class="nav-link" href="logout.jsp">Logout</a>

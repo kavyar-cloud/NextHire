@@ -38,7 +38,7 @@ body {
     text-align: center;
     margin-bottom: 40px;
     margin-top: 20px;
-    position: relative; /* ensure it’s positioned */
+    position: relative; 
     z-index: 1050;
 }
 

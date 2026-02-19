@@ -28,7 +28,7 @@
     <!-- NAVBAR -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
     <div class="container">
-        <a class="navbar-brand" href="#">JobPortal</a>
+        <a class="navbar-brand" href="#">Nexthire</a>
         <ul class="navbar-nav ms-auto">
             <li class="nav-item">
                 <span class="nav-link">Welcome, <%= user.getName() %></span>
@@ -68,7 +68,7 @@
   
       <hr>
       <h5>Description</h5>
-      <p><%= job.getDescription() %></p>
+      <div class="job-description"><%= job.getDescription() %></div>
     </div>
   </div>  
     
@@ -118,8 +118,6 @@
 
     <button type="submit" class="btn btn-success">Submit Application</button>
     <a href="job-list.jsp" class="btn btn-outline-secondary ms-2">Cancel</a>
-</form>
-
 </form>
 
 

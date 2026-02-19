@@ -22,7 +22,7 @@
 <!-- NAVBAR -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
     <div class="container">
-        <a class="navbar-brand" href="index.jsp">JobPortal</a>
+        <a class="navbar-brand" href="index.jsp">NextHire</a>
 
         <div class="collapse navbar-collapse justify-content-end">
             <ul class="navbar-nav">
@@ -36,10 +36,10 @@
 
 <!-- MAIN CONTAINER -->
 <div class="container login-wrapper">
-    <div class="row w-100 align-items-center g-4">
+    <div class="row w-100 align-items-stretch g-4">
 
         <!-- LEFT INFO CARD -->
-        <div class="col-md-6">
+        <div class="col-md-6 d-flex">
             <div class="login-info-card">
                 <h2>Welcome Back</h2>
                 <p>
@@ -62,7 +62,7 @@
         </div>
 
         <!-- RIGHT LOGIN CARD -->
-        <div class="col-md-6">
+        <div class="col-md-6 d-flex">
             <div class="login-form-card">
 
                 <h3 class="text-center">User Login</h3>

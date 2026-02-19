@@ -1,9 +1,15 @@
 package com.jobportal.config;
 
 import org.hibernate.SessionFactory;
+import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
 
+import com.jobportal.entity.Application;
+import com.jobportal.entity.ContactMessage;
+import com.jobportal.entity.Job;
+import com.jobportal.entity.Recruiter;
 import com.jobportal.entity.RecruiterProfile;
+import com.jobportal.entity.User;
 
 public class HibernateUtil {
     private static final SessionFactory sessionFactory = buildSessionFactory();
@@ -20,21 +26,24 @@ public class HibernateUtil {
 
             // Hibernate settings
             cfg.setProperty("hibernate.dialect", "org.hibernate.dialect.PostgreSQLDialect");
-            cfg.setProperty("hibernate.hbm2ddl.auto", "update"); // or update during dev
+            cfg.setProperty("hibernate.hbm2ddl.auto", "update");
             cfg.setProperty("hibernate.show_sql", "true");
             cfg.setProperty("hibernate.format_sql", "true");
 
-            // Entities
-            cfg.addAnnotatedClass(com.jobportal.entity.User.class);
-            cfg.addAnnotatedClass(com.jobportal.entity.Job.class);
-            cfg.addAnnotatedClass(com.jobportal.entity.Application.class);
-            cfg.addAnnotatedClass(com.jobportal.entity.ContactMessage.class);
+            // Register entities
+            cfg.addAnnotatedClass(User.class);
+            cfg.addAnnotatedClass(Job.class);
+            cfg.addAnnotatedClass(Application.class);
+            cfg.addAnnotatedClass(ContactMessage.class);
+            cfg.addAnnotatedClass(Recruiter.class);
             cfg.addAnnotatedClass(RecruiterProfile.class);
 
-
-            return cfg.buildSessionFactory();
+            // ✅ Build with ServiceRegistry (required in Hibernate 6+)
+            return cfg.buildSessionFactory(
+                new StandardServiceRegistryBuilder().applySettings(cfg.getProperties()).build()
+            );
         } catch (Exception e) {
-            throw new RuntimeException("Failed to build SessionFactory", e);
+            throw new RuntimeException("❌ Failed to build SessionFactory", e);
         }
     }
 

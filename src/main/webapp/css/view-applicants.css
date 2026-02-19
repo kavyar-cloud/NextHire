@@ -1,6 +1,87 @@
+/* ===== BODY ===== */
 body {
-    background-color: #f8f9fa;
+    background-color: #f4f6f9;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    padding-top: 80px;  
 }
 
+/* ===== MAIN CONTAINER ===== */
+.main-container {
+    padding-top: 100px;
+}
+
+/* ===== NAVBAR ===== */
+.navbar {
+    background: linear-gradient(90deg, #1e293b, #0f172a);
+}
+
+.navbar-brand {
+    font-weight: 600;
+    font-size: 20px;
+}
+
+/* ===== TITLE ===== */
+.page-title {
+    font-weight: 600;
+    color: #1e293b;
+}
+
+/* ===== CARD ===== */
+.applicant-card {
+    border: none;
+    border-radius: 14px;
+    transition: all 0.2s ease-in-out;
+}
+
+.applicant-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+.card-title {
+    font-weight: 600;
+}
+
+/* ===== BADGES ===== */
+.badge-status {
+    font-size: 13px;
+    padding: 6px 12px;
+    border-radius: 20px;
+}
+
+.badge-pending {
+    background-color: #ffc107;
+    color: #000;
+}
+
+.badge-shortlisted {
+    background-color: #198754;
+    color: #fff;
+}
+
+.badge-rejected {
+    background-color: #dc3545;
+    color: #fff;
+}
+
+.badge-withdrawn {
+    background-color: #6c757d;
+    color: #fff;
+}
+
+/* ===== BUTTONS ===== */
+.btn-primary {
+    background-color: #2563eb;
+    border: none;
+}
+
+.btn-primary:hover {
+    background-color: #1e40af;
+}
+
+.btn-success {
+    border: none;
+}
+
+.btn-danger {
+    border: none;
+}

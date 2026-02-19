@@ -34,7 +34,7 @@
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top py-2">
         <div class="container">
-            <a class="navbar-brand" href="#">JobPortal</a>
+            <a class="navbar-brand" href="#">NextHire</a>
             <div class="collapse navbar-collapse">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
@@ -75,10 +75,37 @@
 
                     <p>
                         <strong>Status:</strong>
-                        <span class="status-badge status-<%= a.getStatus().toLowerCase() %>">
-                            <%= a.getStatus() %>
-                        </span>
+                    
+                        <% 
+                            if ("SHORTLISTED".equalsIgnoreCase(a.getStatus())) { 
+                        %>
+                            <span class="status-badge status-shortlisted">
+                                Shortlisted
+                            </span>
+                    
+                        <% 
+                            } else if ("REJECTED".equalsIgnoreCase(a.getStatus())) { 
+                        %>
+                            <span class="status-badge status-rejected">
+                                Rejected
+                            </span>
+                    
+                        <% 
+                            } else if (a.isResumeViewed()) { 
+                        %>
+                            <span class="status-badge status-viewed">
+                                Viewed
+                            </span>
+                    
+                        <% 
+                            } else { 
+                        %>
+                            <span class="status-badge status-pending">
+                                Pending
+                            </span>
+                        <% } %>
                     </p>
+                    
                 </div>
 
                 <% if ("Pending".equalsIgnoreCase(a.getStatus())) { %>

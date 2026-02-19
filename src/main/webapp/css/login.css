@@ -25,20 +25,31 @@ body {
     padding-bottom: 40px;
 }
 
-/* Limit overall width */
+/* Ensure the row stretches cards equally */
 .login-wrapper .row {
     max-width: 1000px;
     margin: 0 auto;
+    display: flex;
+    align-items: stretch; /* 👈 makes children equal height */
 }
 
 /* Cards */
 .login-info-card,
 .login-form-card {
+    flex: 1; /* 👈 both take equal width */
+    display: flex;
+    flex-direction: column;
     background: #ffffff;
-    padding: 52px;                 /* 👈 more vertical padding */
     border-radius: 12px;
     box-shadow: 0 10px 24px rgba(0, 0, 0, 0.09);
+    padding: 30px; /* optional padding */
 }
+
+/* Optional: add some gap between the cards */
+.login-wrapper .row > .col-md-6 {
+    display: flex;
+}
+
 
 /* Left card */
 .login-info-card h2 {

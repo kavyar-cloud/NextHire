@@ -17,7 +17,7 @@
 <body class="bg-light">
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">JobPortal</a>
+            <a class="navbar-brand" href="#">NextHire</a>
     
             <!-- Toggle button -->
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"

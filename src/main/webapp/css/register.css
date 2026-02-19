@@ -27,12 +27,23 @@ body {
 
 /* LEFT INFO CARD */
 .info-card {
-    border-radius: 14px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.08);
     height: auto; /* shrink naturally */
     margin-top: 0;
+    border-radius: 18px;
+    transition: all 0.3s ease;
+}
+/* Soft hover effect */
+.info-card:hover,
+.register-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.15);
 }
 
+/* Make info card slightly gradient */
+.info-card {
+    background: linear-gradient(135deg, #ffffff, #f8fafc);
+}
 .info-card h2 {
     font-weight: 700;
 }
