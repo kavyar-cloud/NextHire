@@ -16,22 +16,22 @@
     <link rel="stylesheet" href="css/post-job.css">
 </head>
 <body>
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+
+<nav class="navbar navbar-expand-lg navbar-dark shadow-sm custom-navbar">
     <div class="container">
-        <a class="navbar-brand" href="#">JobPortal</a>
-        <div class="collapse navbar-collapse">
-            <ul class="navbar-nav ms-auto">
-                <li class="nav-item">
-                    <span class="nav-link">Welcome, <%= recruiter.getName() %></span>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="logout.jsp">Logout</a>
-                </li>
-            </ul>
-        </div>
+        <a class="navbar-brand fw-bold" href="#">NextHire</a>
+        <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+                <span class="nav-link">Welcome, <%= recruiter.getName() %></span>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="logout">Logout</a>
+            </li>
+        </ul>
     </div>
 </nav>
 
+<div class="dashboard-wrapper">
 <div class="dashboard-header">
     <h2>Welcome, <%= recruiter.getName() %>!</h2>
 </div>
@@ -96,6 +96,7 @@
 
         <button type="submit" class="btn btn-primary">Post Job</button>
     </form>
+</div>
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>

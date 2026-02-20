@@ -1,53 +1,23 @@
-body {
-    background-color: #f4f6f9;
-    padding-top: 80px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+/* SECTION BACKGROUND */
+.register-wrapper {
+    padding: 120px 0 80px;
+    background: linear-gradient(to right, #f8fafc, #eef2ff);
 }
 
-::placeholder {
-    color: #6c757d; /* Bootstrap's muted text color */
-    opacity: 1;     /* Ensures full visibility */
-}
-
-/* Active nav link */
-.navbar-nav .nav-link.active {
-    color: #1b9849 !important;
-    font-weight: 600;
-}
-
-/* Page container */
-.register-card {
-    border-radius: 14px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.12);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    height: 100%; /* stretch vertically */
-}
-
-/* LEFT INFO CARD */
+/* LEFT CARD */
 .info-card {
-    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-    height: auto; /* shrink naturally */
-    margin-top: 0;
-    border-radius: 18px;
-    transition: all 0.3s ease;
-}
-/* Soft hover effect */
-.info-card:hover,
-.register-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
 }
 
-/* Make info card slightly gradient */
-.info-card {
-    background: linear-gradient(135deg, #ffffff, #f8fafc);
-}
 .info-card h2 {
     font-weight: 700;
+    color: #2563eb;
 }
 
+/* LIST */
 .info-list {
     padding-left: 0;
 }
@@ -64,50 +34,51 @@ body {
     margin-right: 10px;
 }
 
-/* RIGHT REGISTER CARD */
+/* RIGHT CARD */
 .register-card {
-    border-radius: 14px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+    background: white;
+    padding: 45px;
+    border-radius: 20px;
+    box-shadow: 0 10px 35px rgba(0,0,0,0.12);
 }
 
-.register-card h3 {
-    /*color: #2563eb;*/
-    font-weight: 600;
+/* INPUTS */
+.form-control {
+    border-radius: 8px;
+    padding: 10px;
 }
 
-/* Inputs */
-.form-control,
-.form-select {
-    border-radius: 6px;
+/* ROLE BOX */
+.role-box {
+    background: #f1f5f9;
+    padding: 10px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
 }
 
-/* Button */
-.btn-success {
-    background-color: #1b9849;
+.role-box:hover {
+    background: #e2e8f0;
+}
+
+/* BUTTON */
+.btn-primary {
+    background-color: #2563eb;
     border: none;
+    border-radius: 8px;
 }
 
-.btn-success:hover {
-    background-color: #107535;
-}
-/* Hide the visible password field by default */
-#password_visible {
-    display: none;
+.btn-primary:hover {
+    background-color: #1d4ed8;
 }
 
-/* When checkbox is checked, hide password and show text field */
-#togglePassword:checked ~ #password {
-    display: none;
-}
-#togglePassword:checked ~ #password_visible {
-    display: block;
-}
-
+/* MOBILE */
 @media (max-width: 768px) {
-    .register-container .row {
-        flex-direction: column;
+    .register-wrapper {
+        padding-top: 100px;
     }
+
     .info-card {
-        margin-bottom: 20px;
+        margin-bottom: 30px;
     }
 }

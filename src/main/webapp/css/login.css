@@ -1,146 +1,105 @@
-/* Page background */
 body {
     background-color: #f4f6f8;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding-top: 40px; /* 👈 THIS FIXES EVERYTHING */
 }
 
-::placeholder {
-    color: #6c757d; /* Bootstrap's muted text color */
-    opacity: 1;     /* Ensures full visibility */
+/* Section Background */
+.login-section {
+    padding: 120px 0 80px; /* Top space handles navbar */
+    background: linear-gradient(to right, #f8fafc, #eef2ff);
+    min-height: 100vh;
 }
 
-/* Active nav link */
-.navbar-nav .nav-link.active {
-    color: #1b9849 !important;
-    font-weight: 600;
-}
-
-/* Wrapper */
-.login-wrapper {
-    min-height: calc(100vh - 100px);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding-top: 50px;
-    padding-bottom: 40px;
-}
-
-/* Ensure the row stretches cards equally */
-.login-wrapper .row {
-    max-width: 1000px;
-    margin: 0 auto;
-    display: flex;
-    align-items: stretch; /* 👈 makes children equal height */
-}
-
-/* Cards */
-.login-info-card,
-.login-form-card {
-    flex: 1; /* 👈 both take equal width */
-    display: flex;
-    flex-direction: column;
+/* Left Card */
+.login-info-card {
     background: #ffffff;
-    border-radius: 12px;
-    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.09);
-    padding: 30px; /* optional padding */
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
 }
 
-/* Optional: add some gap between the cards */
-.login-wrapper .row > .col-md-6 {
-    display: flex;
-}
-
-
-/* Left card */
 .login-info-card h2 {
-    /*color: #0d6efd;*/
     font-weight: 700;
-    margin-bottom: 18px;
+    color: #2563eb;
 }
 
-.login-info-card p {
-    color: #555;
-    margin-bottom: 22px;
-    font-size: 1rem;
-    line-height: 1.6;
-}
-
-/* Feature list */
-.login-info-card ul {
+/* Feature List */
+.feature-list {
     list-style: none;
     padding-left: 0;
-    margin-bottom: 24px;
 }
 
-.login-info-card ul li {
-    margin-bottom: 12px;           /* 👈 more vertical space */
-    padding-left: 22px;
-    position: relative;
-    font-size: 0.95rem;
+.feature-list li {
+    margin-bottom: 12px;
+    font-weight: 500;
 }
 
-.login-info-card ul li::before {
+.feature-list li::before {
     content: "✓";
-    position: absolute;
-    left: 0;
-    color: #198754;
-    font-weight: bold;
+    color: #22c55e;
+    margin-right: 10px;
 }
 
-/* Links */
-.login-info-card a {
-    text-decoration: none;
-    font-weight: 600;
+/* Form Card */
+.login-form-card {
+    background: #ffffff;
+    padding: 45px;
+    border-radius: 20px;
+    box-shadow: 0 10px 35px rgba(0,0,0,0.12);
 }
 
-/* Right card (form) */
-.login-form-card h2 {
-    margin-bottom: 22px;
+/* Inputs */
+.form-control {
+    border-radius: 8px;
+    padding: 10px;
 }
 
-.login-form-card h3{
-    color: black !important;
-}
 
-.login-form-card .form-control {
-    padding: 12px;                 /* 👈 taller inputs */
-    margin-bottom: 18px;
-}
-
-/* Primary button - default */
+/* Button */
 .btn-primary {
-    background-color: #1b9849 !important;
+    background-color: #2563eb;
     border: none;
-    padding: 12px;
+    border-radius: 8px;
     font-weight: 600;
-    margin-top: 10px;
 }
 
-/* Hover */
 .btn-primary:hover {
-    background-color: #107535 !important;
+    background-color: #1d4ed8;
 }
 
-/* Click (active) */
-.btn-primary:active {
-    background-color: #107535 !important;
+.password-toggle {
+    position: absolute;
+    top: 38px;
+    right: 15px;
+    cursor: pointer;
+    color: #64748b;
+    font-size: 18px;
 }
 
-/* Focus (keyboard + mouse click) */
-.btn-primary:focus,
-.btn-primary:focus-visible {
-    background-color: #1b9849 !important;
-    box-shadow: none !important;
+.password-toggle:hover {
+    color: #2563eb;
 }
 
+/* Hide default Edge/Chrome password reveal icon */
+input[type="password"]::-ms-reveal,
+input[type="password"]::-ms-clear {
+    display: none;
+}
+
+/* Hide default Chrome autofill icon */
+input[type="password"]::-webkit-credentials-auto-fill-button {
+    visibility: hidden;
+    display: none !important;
+}
 
 /* Responsive */
 @media (max-width: 768px) {
-    .login-wrapper {
-        min-height: auto;
+    .login-section {
+        padding-top: 100px;
     }
 
-    .login-wrapper .row {
-        max-width: 100%;
+    .login-info-card {
+        margin-bottom: 30px;
     }
 }
