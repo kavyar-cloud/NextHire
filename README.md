@@ -53,3 +53,10 @@ This project is currently under **active development**. Features are being added
 4. Build with Maven: mvn clean install
 
 5. Deploy the WAR file to Tomcat and access via: http://localhost:8080/NextHire
+
+---
+   
+## License
+   
+This project is licensed under the MIT License — see the [LICENSE](LICENSE) file for details.
+
