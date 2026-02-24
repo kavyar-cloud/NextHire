@@ -50,20 +50,22 @@ public class UpdateRecruiterProfileServlet extends HttpServlet {
         profile.setSummary(req.getParameter("summary"));
 
         // ===== FILE UPLOADS =====
+       // ===== FILE UPLOADS =====
         Part logo = req.getPart("logo");
         Part profileDoc = req.getPart("profileDoc");
 
         // 🔥 SAVE LOGO
         if (logo != null && logo.getSize() > 0) {
-            String logoPath = FileUploadUtil.save(logo, getServletContext());
+            String logoPath = FileUploadUtil.save(logo);
             profile.setLogo(logoPath);
         }
 
         // 🔥 SAVE PROFILE DOCUMENT
         if (profileDoc != null && profileDoc.getSize() > 0) {
-            String docPath = FileUploadUtil.save(profileDoc, getServletContext());
+            String docPath = FileUploadUtil.save(profileDoc);
             profile.setProfileDoc(docPath);
         }
+
 
         // ===== SAVE OR UPDATE =====
         dao.saveOrUpdate(profile);

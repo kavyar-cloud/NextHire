@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+import org.hibernate.query.Query;
 
 import com.jobportal.config.HibernateUtil;
 import com.jobportal.entity.Job;
@@ -80,5 +81,33 @@ public class JobDao {
         }
     }
     
+    public List<Job> searchJobs(String keyword, String location) {
+
+        Session session = HibernateUtil.getSessionFactory().openSession();
+    
+        String hql = "FROM Job j WHERE 1=1 ";
+    
+        if (keyword != null && !keyword.trim().isEmpty()) {
+            hql += " AND LOWER(j.title) LIKE LOWER(:keyword)";
+        }
+    
+        if (location != null && !location.trim().isEmpty()) {
+            hql += " AND LOWER(j.location) LIKE LOWER(:location)";
+        }
+    
+        Query<Job> query = session.createQuery(hql, Job.class);
+    
+        if (keyword != null && !keyword.trim().isEmpty()) {
+            query.setParameter("keyword", "%" + keyword + "%");
+        }
+    
+        if (location != null && !location.trim().isEmpty()) {
+            query.setParameter("location", "%" + location + "%");
+        }
+    
+        List<Job> result = query.getResultList();
+        session.close();
+        return result;
+    }
 
 }

@@ -8,3 +8,56 @@
 /dataSources.local.xml
 # Editor-based HTTP Client requests
 /httpRequests/
+
+# Build output
+/target/
+/build/
+/out/
+
+# IDE files
+*.iml
+*.ipr
+*.iws
+.idea/
+.vscode/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Temporary files
+*.tmp
+*.swp
+
+# Maven / Gradle
+.mvn/
+.gradle/
+.classpath
+.project
+.settings/
+
+# Tomcat / server runtime
+/.tomcat/
+/work/
+/bin/
+/logs/
+
+# User uploads
+uploads/
+
+# Compiled classes
+*.class
+
+# Package archives
+*.jar
+*.war
+*.ear
+
+# Node modules (if you use frontend JS builds)
+node_modules/
+
+# Environment files
+.env

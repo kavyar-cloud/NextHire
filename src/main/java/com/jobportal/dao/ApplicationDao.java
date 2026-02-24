@@ -221,4 +221,17 @@ public List<ApplicationView> getApplicationsByJobAndRecruiter(int jobId, int rec
     }
 }
 
+public int countApplicationsByUser(int userId) {
+    try (Session session = HibernateUtil.getSessionFactory().openSession()) {
+
+        Long count = session.createQuery(
+                "SELECT COUNT(a.id) FROM Application a WHERE a.userId = :userId",
+                Long.class)
+                .setParameter("userId", userId)
+                .uniqueResult();
+
+        return count != null ? count.intValue() : 0;
+    }
+}
+
 }

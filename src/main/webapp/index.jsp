@@ -199,7 +199,7 @@
 <!-- ================= FOOTER ================= -->
 <footer class="text-white text-center py-3">
     <p class="mb-0">
-        &copy; 2026 NextHire. All rights reserved.
+        &copy; 2026 Kavya — Licensed under MIT.
     </p>
 </footer>
 

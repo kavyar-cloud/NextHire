@@ -134,5 +134,22 @@ public class User {
         this.location = location;
     }
 
+    public int getProfileCompletion() {
+
+        int total = 9;
+        int filled = 0;
+    
+        if (name != null && !name.trim().isEmpty()) filled++;
+        if (mobile != null && !mobile.trim().isEmpty()) filled++;
+        if (location != null && !location.trim().isEmpty()) filled++;
+        if (summary != null && !summary.trim().isEmpty()) filled++;
+        if (skills != null && !skills.trim().isEmpty()) filled++;
+        if (experience != null && !experience.trim().isEmpty()) filled++;
+        if (education != null && !education.trim().isEmpty()) filled++;
+        if (photo != null && !photo.trim().isEmpty()) filled++;
+        if (resume != null && !resume.trim().isEmpty()) filled++;
+    
+        return (int) ((filled * 100.0) / total);
+    }
 
 }

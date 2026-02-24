@@ -1,0 +1,7 @@
+<Context>
+    <Resources>
+        <PreResources className="org.apache.catalina.webresources.DirResourceSet"
+            base="E:/intellij files/NextHire/uploads"
+            webAppMount="/uploads" />
+    </Resources>
+</Context>
