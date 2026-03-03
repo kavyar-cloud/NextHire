@@ -3,14 +3,51 @@ body {
     padding-top: 90px;  
 }
 
-.profile-wrapper {
-    max-width: 1100px;
-    margin: 0 auto 80px;
-    display: grid;
-    grid-template-columns: 280px 1fr;
-    gap: 30px;
-    padding: 0 20px;
+/* Profile Strength Bar */
+.profile-strength {
+    margin-top: 20px;
+    text-align: center;
 }
+
+.strength-label {
+    font-size: 14px;
+    font-weight: 600;
+    color: #475569;
+    margin-bottom: 6px;
+    display: block;
+}
+
+.progress {
+    height: 14px;
+    border-radius: 10px;
+    background-color: #e2e8f0;
+    overflow: hidden;
+    margin-bottom: 8px;
+}
+
+.progress-bar {
+    height: 100%;
+    background: linear-gradient(135deg, #5a8dee, #224abe); /* smoother gradient */
+    color: #fff;
+    font-size: 12px;
+    font-weight: 600;
+    text-align: center;
+    line-height: 14px;
+    border-radius: 10px; /* rounded ends */
+    transition: width 0.6s ease; /* smooth animation */
+}
+
+
+/* Align sidebar and content cards */
+.profile-wrapper {
+    align-items: start; /* both columns start at top */
+}
+
+.profile-box {
+    position: sticky;
+    top: 90px; /* same as navbar height */
+}
+/* User Toggle */
 .user-toggle {
     display: flex;
     align-items: center;
@@ -21,8 +58,9 @@ body {
 .user-toggle:hover {
     opacity: 0.85;
 }
+/* Custom Dropdown */
 .custom-dropdown {
-    border-radius: 16px;
+    border-radius: 12px;
     padding: 10px;
     border: none;
     box-shadow: 0 15px 35px rgba(0,0,0,0.08);
@@ -37,7 +75,7 @@ body {
 
 /* Dropdown Items */
 .custom-dropdown .dropdown-item {
-    border-radius: 10px;
+    border-radius: 8px;
     padding: 8px 12px;
     transition: 0.2s ease;
     font-weight: 500;
@@ -54,15 +92,23 @@ body {
     color: #d9534f !important;
 }
 
-/* ================= SIDEBAR ================= */
+.profile-wrapper {
+    max-width: 1100px;
+    margin: 0 auto 80px;
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 30px;
+    padding: 0 20px;
+}
 
+/* ================= SIDEBAR ================= */
 .profile-box {
     background: #ffffff;
-    border-radius: 18px;
+    border-radius: 12px;   /* unified radius */
     padding: 30px 25px;
     text-align: center;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.06);
-    height: fit-content; /* FIX long card */
+    box-shadow: 0 6px 18px rgba(0,0,0,0.08); /* unified shadow */
+    height: fit-content;
     position: sticky;
     top: 100px;
 }
@@ -76,15 +122,6 @@ body {
     margin-bottom: 15px;
 }
 
-.profile-box h5 {
-    font-weight: 700;
-    margin-bottom: 5px;
-}
-
-.profile-box p {
-    color: #64748b;
-    font-size: 14px;
-}
 .profile-box h3 {
     font-weight: 700;
     margin-top: 10px;
@@ -97,57 +134,25 @@ body {
     margin-bottom: 15px;
 }
 
-/* Profile Strength */
-.profile-strength {
-    margin-top: 20px;
-}
-
-.progress {
-    height: 8px;
-    border-radius: 10px;
-    background-color: #e2e8f0;
-}
-
-.progress-bar {
-    background: linear-gradient(90deg, var(--primary), #1d4ed8);
-}
-
-.profile-strength small {
-    display: block;
-    margin-top: 6px;
-    color: #64748b;
-}
-
-.progress-fill {
-    width: 70%;
-    height: 100%;
-    background: linear-gradient(90deg, var(--primary), #1d4ed8);
-    border-radius: 10px;
-}
 
 /* ================= CONTENT AREA ================= */
-
 .profile-content {
     display: flex;
     flex-direction: column;
     gap: 25px;
 }
 
-/* Section Card */
-
 .section {
     background: #ffffff;
-    border-radius: 18px;
+    border-radius: 12px;   /* unified radius */
     padding: 28px;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.05);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
     transition: 0.3s ease;
     margin-bottom: 25px;
 }
-
 .section:hover {
     transform: translateY(-3px);
 }
-
 .section-title {
     font-weight: 700;
     margin-bottom: 20px;
@@ -157,81 +162,72 @@ body {
 }
 
 /* ================= FORM STYLING ================= */
-
 .form-label {
     font-weight: 500;
     font-size: 14px;
     color: #475569;
 }
-
 .form-control {
-    border-radius: 12px;
+    border-radius: 8px;   /* match global */
     padding: 12px;
     border: 1px solid #e2e8f0;
     background-color: #f9fafb;
     transition: all 0.2s ease;
 }
-
 .form-control:focus {
     border-color: var(--primary);
     box-shadow: 0 0 0 0.2rem rgba(37,99,235,0.15);
     background-color: #ffffff;
 }
-
-/* Textarea */
 textarea.form-control {
     resize: none;
 }
 
-/* ================= SAVE BUTTON ================= */
-
+/* ================= BUTTONS ================= */
 .save-wrapper {
     display: flex;
     justify-content: flex-end;
     margin-top: 10px;
+    gap: 15px;
 }
 
 .btn-save {
     background: var(--primary);
     border: none;
-    padding: 14px 38px;
-    border-radius: 50px;
+    padding: 12px 28px;   /* unified size */
+    border-radius: 6px;   /* rectangular */
     font-weight: 600;
     color: #ffffff;
     font-size: 15px;
     transition: all 0.3s ease;
-    box-shadow: 0 8px 20px rgba(37,99,235,0.25);
+    box-shadow: 0 6px 18px rgba(37,99,235,0.25);
 }
-
 .btn-save:hover {
     background: #1d4ed8;
     transform: translateY(-2px);
 }
 
-/* ================= ALERTS ================= */
-
-.alert {
-    border-radius: 12px;
-    font-weight: 500;
-}
-
 .btn-back {
-    padding: 10px 20px; /* top/bottom, left/right */
-    border-radius: 50px; /* keeps pill shape */
+    border: 1px solid #ccc;
+    padding: 12px 28px;
+    border-radius: 6px;   /* rectangular */
+    font-weight: 500;
+    color: #555;
+    background: #f9fafb;
+    transition: 0.2s ease;
+}
+.btn-back:hover {
+    background: #e2e8f0;
 }
 
 /* ================= RESPONSIVE ================= */
-
 @media (max-width: 992px) {
-
     .profile-wrapper {
         grid-template-columns: 1fr;
     }
-
     .profile-box {
         position: static;
     }
-
     .save-wrapper {
         justify-content: center;
     }

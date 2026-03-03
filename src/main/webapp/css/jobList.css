@@ -11,9 +11,9 @@ body {
 /* Stat Cards */
 .stat-card {
     padding: 30px;
-    border-radius: 18px;
+    border-radius: 12px;
     border: none;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.05);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
     text-align: center;          
     display: flex;
     flex-direction: column;      
@@ -22,29 +22,25 @@ body {
     gap: 12px;
     transition: 0.3s ease;
 }
-
 .stat-card:hover {
     transform: translateY(-6px);
 }
-
 .stat-card h6 {
     margin: 0;
     font-size: 14px;
     color: #6c757d;
     font-weight: 500;
 }
-
 .stat-card h3 {
     margin: 0;
     font-size: 28px;
     font-weight: 700;
     color: #212529;
 }
-
 .stat-icon {
     width: 65px;
     height: 65px;
-    border-radius: 18px;
+    border-radius: 12px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -54,60 +50,109 @@ body {
 
 /* Search Card */
 .search-card {
-    border-radius: 15px;
+    border-radius: 12px;
     border: none;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
 }
 
 /* Job Cards */
 .job-card {
-    padding: 25px;   /* 👈 THIS fixes border touching */
-    border-radius: 15px;
+    padding: 25px;
+    border-radius: 12px;
     border: none;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
     transition: 0.3s ease;
 }
-
 .job-card:hover {
     transform: translateY(-3px);
-    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.12);
 }
-
 .job-title {
     font-weight: 600;
 }
 
-
-/* Strong Contrast Applied Button */
-.applied-badge {
-    background-color: #198754;   
-    color: #ffffff;             
-    border: none;
-    padding: 7px 18px;
-    font-size: 14px;
-    font-weight: 600;
-    border-radius: 50px;
+/* Unified Button Base (Apply + Applied) */
+.job-card .btn-primary,
+.btn-success-custom {
     display: inline-flex;
     align-items: center;
-    gap: 6px;
-    /* box-shadow: 0 6px 15px rgba(25, 135, 84, 0.35);   */
-    cursor: not-allowed;
-}
-
-.apply-btn {
-    border-radius: 20px;
-    padding: 6px 16px;
+    justify-content: center;
+    font-size: 15px;
     font-weight: 600;
+    padding: 12px 28px;
+    border-radius: 6px;   /* rectangular, modern */
+    text-decoration: none;
+    min-width: 140px;
+    text-align: center;
+    transition: all 0.3s ease;
+    border: none;
 }
 
+/* Apply Now button - subtle blue gradient */
+.job-card .btn-primary {
+    background: linear-gradient(135deg, #5a8dee, #224abe) !important; /* force gradient */
+    color: #fff !important;
+    box-shadow: 0 4px 12px rgba(34, 74, 190, 0.15);
+}
+.job-card .btn-primary:hover {
+    background: linear-gradient(135deg, #224abe, #1d3bb8) !important;
+    box-shadow: 0 6px 16px rgba(34, 74, 190, 0.25);
+}
+
+/* Applied badge - subtle green gradient */
+.btn-success-custom {
+    background: linear-gradient(135deg, #4caf50, #2e7d32) !important;
+    color: #fff !important;
+    box-shadow: 0 4px 12px rgba(46, 125, 50, 0.15);
+}
+.btn-success-custom:hover {
+    background: linear-gradient(135deg, #2e7d32, #27632a) !important;
+    box-shadow: 0 6px 16px rgba(46, 125, 50, 0.25);
+}
+
+/* Base Soft Button */
+.btn-soft {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 7px 18px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    min-width: 120px;
+}
+
+/* Search Input */
+.search-input {
+    height: 45px;
+    border-radius: 12px;
+    padding: 10px 15px;
+    font-size: 14px;
+}
+.search-btn {
+    height: 45px;
+    background: linear-gradient(135deg, #4e73df, #224abe) !important;
+    border: none;
+    color: #fff;
+    font-weight: 600;
+    border-radius: 6px;
+    box-shadow: 0 4px 12px rgba(34, 74, 190, 0.15);
+    transition: all 0.3s ease;
+}
+.search-btn:hover {
+    background: linear-gradient(135deg, #224abe, #1d3bb8) !important;
+    box-shadow: 0 6px 16px rgba(34, 74, 190, 0.25);
+}
+
+/* Gradient backgrounds for stat icons */
 .bg-primary {
     background: linear-gradient(135deg, #4e73df, #224abe);
 }
-
 .bg-success {
-    background: linear-gradient(135deg, #1cc88a, #13855c);
+    background: linear-gradient(135deg, #4caf50, #2e7d32);
 }
-
 .bg-warning {
     background: linear-gradient(135deg, #f6c23e, #dda20a);
 }
@@ -119,34 +164,28 @@ body {
     font-weight: 500;
     color: white !important;
 }
-
 .user-toggle:hover {
     opacity: 0.85;
 }
 
 /* Custom Dropdown */
 .custom-dropdown {
-    border-radius: 16px;
+    border-radius: 12px;
     padding: 10px;
     border: none;
     box-shadow: 0 15px 35px rgba(0,0,0,0.08);
     animation: fadeDown 0.2s ease-in-out;
     min-width: 220px;
 }
-
-/* Dropdown Header */
 .dropdown-header {
     padding: 10px 15px;
 }
-
-/* Dropdown Items */
 .custom-dropdown .dropdown-item {
-    border-radius: 10px;
+    border-radius: 8px;
     padding: 8px 12px;
     transition: 0.2s ease;
     font-weight: 500;
 }
-
 .custom-dropdown .dropdown-item:hover {
     background-color: #f1f5ff;
     color: #2e59d9;

@@ -1,154 +1,127 @@
-/* style.css */
-
-/* Body and container */
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f8f9fa;
-    padding-top: 80px; /* space for fixed navbar */
+    background: #f4f6f9;
+    padding-top: 120px;
 }
 
-/* Navbar */
-.navbar {
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+.profile-wrapper {
+    max-width: 1100px;
+    margin: 0 auto 80px;
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 30px;
+    padding: 0 20px;
+}
+.user-toggle {
+    display: flex;
+    align-items: center;
+    font-weight: 500;
+    color: white !important;
 }
 
-.navbar-brand {
-    font-weight: bold;
+.user-toggle:hover {
+    opacity: 0.85;
+}
+.custom-dropdown {
+    border-radius: 16px;
+    padding: 10px;
+    border: none;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+    animation: fadeDown 0.2s ease-in-out;
+    min-width: 220px;
 }
 
-.nav-link {
-    color: #ffffff !important;
+/* Dropdown Header */
+.dropdown-header {
+    padding: 10px 15px;
 }
 
-/* Headings */
-h2 {
-    margin-top: 20px;
-    margin-bottom: 10px;
-    font-weight: 600;
-}
-
-h5 {
-    margin-top: 30px;
-    margin-bottom: 15px;
+/* Dropdown Items */
+.custom-dropdown .dropdown-item {
+    border-radius: 10px;
+    padding: 8px 12px;
+    transition: 0.2s ease;
     font-weight: 500;
 }
 
-.job-description {
-    white-space: pre-line;
+.custom-dropdown .dropdown-item:hover {
+    background-color: #f1f5ff;
+    color: #2e59d9;
 }
 
-
-/* Job info section */
-p {
-    font-size: 1rem;
-    margin-bottom: 8px;
+/* Logout style */
+.logout-item:hover {
+    background-color: #ffe5e5 !important;
+    color: #d9534f !important;
 }
 
-p b {
-    color: #333333;
+.apply-container {
+    margin-bottom: 60px;
 }
 
-/* Form styling */
-form {
-    background-color: #ffffff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 15px rgba(0,0,0,0.05);
-    margin-bottom: 50px;
+/* Modern Job Card */
+.job-card-modern {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 18px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.05);
+    margin-bottom: 30px;
 }
 
-input.form-control,
-textarea.form-control {
-    border-radius: 6px;
-    border: 1px solid #ced4da;
-    padding: 10px;
-    font-size: 0.95rem;
+.job-header h3 {
+    font-weight: 700;
+    margin-bottom: 5px;
 }
 
-input.form-control:focus,
-textarea.form-control:focus {
-    border-color: #0d6efd;
-    box-shadow: 0 0 5px rgba(13,110,253,0.3);
+.company {
+    color: #6c757d;
 }
 
-textarea.form-control {
-    resize: vertical;
+.job-meta {
+    display: flex;
+    gap: 25px;
+    margin-top: 15px;
+    font-size: 14px;
+    color: #555;
 }
 
-/* Buttons */
+.job-meta i {
+    margin-right: 6px;
+    color: #4e73df;
+}
+
+.job-description-modern {
+    margin-top: 25px;
+}
+
+/* Modern Form */
+.apply-form-card {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 18px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.05);
+}
+
+.apply-form-card h4 {
+    font-weight: 600;
+}
+
+.form-control {
+    border-radius: 10px;
+    padding: 10px 12px;
+}
+
+.form-control:focus {
+    box-shadow: 0 0 0 0.2rem rgba(78,115,223,0.25);
+    border-color: #4e73df;
+}
+
 .btn-primary {
-    background-color: #0d6efd;
+    background: linear-gradient(135deg, #4e73df, #224abe);
     border: none;
+    border-radius: 30px;
+    font-weight: 600;
 }
 
 .btn-primary:hover {
-    background-color: #0b5ed7;
-}
-
-.btn-secondary {
-    background-color: #6c757d;
-    border: none;
-}
-
-.btn-secondary:hover {
-    background-color: #5c636a;
-}
-
-form {
-    background-color: #fdfdfd;
-    border: 1px solid #e0e0e0;
-    border-radius: 10px;
-}
-
-label {
-    font-weight: 600;
-    color: #333;
-}
-
-.btn-success {
-    background-color: #28a745;
-    border: none;
-}
-
-.btn-success:hover {
-    background-color: #218838;
-}
-
-.btn-outline-secondary:hover {
-    background-color: #6c757d;
-    color: #fff;
-}
-
-.card {
-    border-radius: 10px;
-    background-color: #ffffff;
-}
-
-.card-title {
-    font-weight: 700;
-    margin-bottom: 10px;
-}
-
-.card-subtitle {
-    font-size: 1rem;
-    margin-bottom: 15px;
-}
-
-.card-body p {
-    font-size: 0.95rem;
-    margin-bottom: 8px;
-}
-
-.card-body i {
-    color: #0d6efd; /* Bootstrap blue for icons */
-    margin-right: 6px;
-}
-
-
-
-/* Responsive spacing */
-@media (max-width: 768px) {
-    .row > .col-md-6 {
-        margin-bottom: 15px;
-    }
+    opacity: 0.9;
 }

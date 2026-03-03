@@ -1,3 +1,4 @@
+/* ================= ABOUT SECTION ================= */
 .about-section {
     padding: 90px 0;
     background-color: #f9fafb;
@@ -7,7 +8,7 @@
 .about-title {
     font-size: 2.6rem;
     font-weight: 700;
-    color: #0d6efd;
+    color: #0d6efd;   /* homepage accent blue */
     margin-bottom: 25px;
 }
 
@@ -16,7 +17,6 @@
     max-width: 750px;
     margin: 0 auto 60px auto;
 }
-
 .about-text p {
     font-size: 1.05rem;
     line-height: 1.9;
@@ -26,58 +26,80 @@
 
 /* Cards */
 .about-cards {
-    /*gap: 20px;*/
     justify-content: center;
 }
-
 .feature-card {
     background: #ffffff;
-    border-radius: 18px;
+    border-radius: 18px;   /* unified radius */
     padding: 32px 28px;
     height: 100%;
-    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.08); /* unified shadow */
     transition: all 0.3s ease;
 }
-
 .feature-card h5 {
     font-weight: 600;
     color: #0d6efd;
     margin-bottom: 12px;
 }
-
 .feature-card p {
     color: #555;
     font-size: 0.95rem;
     line-height: 1.7;
 }
-
 .feature-card:hover {
     transform: translateY(-8px);
     box-shadow: 0 18px 40px rgba(0, 0, 0, 0.12);
 }
 
-
+/* Contact section */
 #contact {
-    /*padding-top: 10px;*/
-    /*padding-bottom: 20px;*/
     scroll-margin-top: 80px;
     margin-top: 0 !important;
     padding-top: 0 !important;
 }
+
+/* ================= HERO SECTION ================= */
 .hero-section {
     height: 100vh;
     background: linear-gradient(rgba(15,23,42,0.75), rgba(15,23,42,0.75)),
                 url("../images/bg.png") center/cover no-repeat;
     color: #fff;
 }
-
 .hero-text h1 {
     font-size: 3rem;
 }
-
 .hero-text p {
     font-size: 1.2rem;
     color: #e2e8f0;
+}
+
+/* Homepage CTA buttons - override global gradient */
+.hero-section .btn-primary {
+    background: #0d6efd !important;   /* flat homepage accent blue */
+    color: #fff !important;
+    border: none;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 16px;
+    padding: 14px 32px;
+    box-shadow: none;
+    transition: all 0.3s ease;
+}
+.hero-section .btn-primary:hover {
+    background: #0b5ed7 !important;
+}
+.hero-section .btn-outline-light {
+    border: 2px solid #fff;
+    color: #fff;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 16px;
+    padding: 14px 32px;
+    transition: all 0.3s ease;
+}
+.hero-section .btn-outline-light:hover {
+    background: #fff;
+    color: #0d6efd;
 }
 
 /* About Image */
@@ -92,22 +114,48 @@
     color: #1b9849 !important;
     font-weight: 600;
 }
-
 /* Hover */
 .navbar-nav .nav-link:hover {
     color: #1b9849;
 }
 
-
-
-/* Mobile Fix */
-@media (max-width: 768px) {
-    #about p {
-        text-align: center;
-    }
-
-    .about-img {
-        max-width: 100%;
-        margin-top: 20px;
-    }
+/* ================= GLOBAL BUTTONS ================= */
+/* Gradient buttons everywhere except homepage hero */
+body:not(.home) .btn-primary,
+body:not(.home) .btn-primary-custom {
+    background: linear-gradient(135deg, #5a8dee, #224abe);
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 15px;
+    padding: 12px 28px;
+    min-width: 140px;
+    box-shadow: 0 4px 12px rgba(34, 74, 190, 0.15);
+    transition: all 0.3s ease;
 }
+body:not(.home) .btn-primary:hover,
+body:not(.home) .btn-primary-custom:hover {
+    background: linear-gradient(135deg, #224abe, #1d3bb8);
+    box-shadow: 0 6px 16px rgba(34, 74, 190, 0.25);
+}
+
+/* Success button */
+.btn-success-custom {
+    background: linear-gradient(135deg, #4caf50, #2e7d32);
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 15px;
+    padding: 12px 28px;
+    min-width: 140px;
+    box-shadow: 0 4px 12px rgba(46, 125, 50, 0.15);
+    transition: all 0.3s ease;
+}
+.btn-success-custom:hover {
+    background: linear-gradient(135deg, #2e7d32, #27632a);
+    box-shadow: 0 6px 16px rgba(46, 125, 50, 0.25);
+}
+
+/* =================

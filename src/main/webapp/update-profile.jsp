@@ -39,7 +39,7 @@
 <!-- ===== NAVBAR ===== -->
 <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
     <div class="container">
-        <a class="navbar-brand" href="job-list.jsp">NextHire</a>
+        <a class="navbar-brand" href="#">NextHire</a>
 
         <div class="dropdown ms-auto">
             <a class="nav-link dropdown-toggle user-toggle"
@@ -51,27 +51,25 @@
             <ul class="dropdown-menu dropdown-menu-end custom-dropdown">
                 <li class="dropdown-header">
                     <strong><%= user.getName() %></strong><br>
-                    <small class="text-muted">Manage your profile 👤</small>
+                    <small class="text-muted">Welcome back 👋</small>
                 </li>
-
+        
                 <li><hr class="dropdown-divider"></li>
-            
-
-                <!-- Other relevant options -->
+        
                 <li>
                     <a class="dropdown-item" href="job-list.jsp">
-                        <i class="bi bi-grid me-2"></i> Dashboard
+                        <i class="bi bi-grid me-2"></i> Dashboard</a></li>
                     </a>
                 </li>
-
+        
                 <li>
                     <a class="dropdown-item" href="status.jsp">
                         <i class="bi bi-briefcase me-2"></i> My Applications
                     </a>
                 </li>
-
+        
                 <li><hr class="dropdown-divider"></li>
-
+        
                 <li>
                     <a class="dropdown-item logout-item" href="logout.jsp">
                         <i class="bi bi-box-arrow-right me-2"></i> Logout
@@ -81,8 +79,7 @@
         </div>
     </div>
 </nav>
-
-
+  
 
 <!-- ===== MAIN LAYOUT ===== -->
 <div class="profile-wrapper">
@@ -98,8 +95,16 @@
         <h3><%= user.getName() %></h3>
         <p class="role"><%= user.getRole() != null ? user.getRole() : "Job Seeker" %></p>
 
-        <div class="progress-fill" style="width:<%= completion %>%"></div>
-        Profile Strength: <%= user.getProfileCompletion() %>%
+        <div class="profile-strength">
+            <label class="strength-label">Profile Strength</label>
+            <div class="progress">
+                <div class="progress-bar" style="width:<%= user.getProfileCompletion() %>%">
+                    <%= user.getProfileCompletion() %>%
+                </div>
+            </div>
+        </div>
+        
+        
         
         
     </aside>

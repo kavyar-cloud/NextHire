@@ -146,34 +146,26 @@
     </div>
 
     <!-- SEARCH BAR -->
-    <div class="card search-card mb-4">
-        <form method="get" action="job-list.jsp">
-            <div class="row g-3 p-4">
+    <div class="row g-3 align-items-center mb-4">
     
-                <div class="col-md-5">
-                    <input type="text"
-                           name="keyword"
-                           value="<%= keyword != null ? keyword : "" %>"
-                           class="form-control"
-                           placeholder="Search job title...">
-                </div>
+        <div class="col-md-5">
+            <input type="text" 
+                   class="form-control search-input" 
+                   placeholder="Search job title...">
+        </div>
     
-                <div class="col-md-4">
-                    <input type="text"
-                           name="location"
-                           value="<%= location != null ? location : "" %>"
-                           class="form-control"
-                           placeholder="Location">
-                </div>
+        <div class="col-md-4">
+            <input type="text" 
+                   class="form-control search-input" 
+                   placeholder="Location">
+        </div>
     
-                <div class="col-md-3">
-                    <button class="btn btn-primary w-100 search-btn">
-                        Search Jobs
-                    </button>
-                </div>
+        <div class="col-md-3">
+            <button class="btn-primary-custom w-100 search-btn">
+                Search Jobs
+            </button>
+        </div>
     
-            </div>
-        </form>
     </div>
 
     <!-- JOB LIST -->
@@ -199,18 +191,17 @@
 
             <div class="col-md-4 text-end">
                 <% if (alreadyApplied) { %>
-                    <button class="applied-badge" disabled>
-                        <i class="bi bi-check-circle-fill"></i>
+                    <span class="btn-success-custom">
+                        <i class="bi bi-check-circle me-1"></i>
                         Applied
-                    </button>
+                    </span>
                 <% } else { %>
                     <a href="apply-job.jsp?jobId=<%= job.getId() %>"
-                       class="btn btn-primary btn-sm apply-btn">
+                       class="btn-primary-custom">
                         Apply Now
                     </a>
                 <% } %>
             </div>
-
         </div>
     </div>
 

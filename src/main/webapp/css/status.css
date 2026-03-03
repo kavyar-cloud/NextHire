@@ -1,144 +1,163 @@
-/* status.css */
-
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f5f7fa;
-    margin: 0;
+    background: #f4f6f9;
+    padding-top: 120px;
 }
 
-.page-content {
-    margin-top: 90px; /* height of navbar */
-    padding: 20px;
+/* Navbar User Toggle */
+.user-toggle {
+    display: flex;
+    align-items: center;
+    font-weight: 500;
+    color: white !important;
+}
+.user-toggle:hover {
+    opacity: 0.85;
 }
 
-
-/* Navigation buttons */
-.nav-buttons {
-    text-align: center;
-    margin-bottom: 40px;
+/* Dropdown */
+.custom-dropdown {
+    border-radius: 12px;
+    padding: 10px;
+    border: none;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+    animation: fadeDown 0.2s ease-in-out;
+    min-width: 220px;
+}
+.dropdown-header {
+    padding: 10px 15px;
+}
+.custom-dropdown .dropdown-item {
+    border-radius: 8px;
+    padding: 8px 12px;
+    transition: 0.2s ease;
+    font-weight: 500;
+}
+.custom-dropdown .dropdown-item:hover {
+    background-color: #f1f5ff;
+    color: #2e59d9;
+}
+.logout-item:hover {
+    background-color: #ffe5e5 !important;
+    color: #d9534f !important;
 }
 
-.nav-buttons .btn {
-    min-width: 150px;
+/* Page Container */
+.status-container {
+    margin-bottom: 60px;
 }
 
-.page-container {
-    max-width: 800px;
-    margin: 20px auto;
-    padding: 0 20px;
-}
-
-
-.header {
-    text-align: center;
+/* Header */
+.status-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     margin-bottom: 30px;
 }
-
-.header h2 {
-    color: #007bff;
-    font-size: 28px;
-}
-
-.back-btn {
-    display: inline-block;
-    margin-bottom: 20px;
-    color: #007bff;
-    text-decoration: none;
-    font-weight: 500;
-}
-
-.back-btn:hover {
-    text-decoration: underline;
-}
-
-/* Application card */
-.app-card {
-    background-color: #ffffff;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    padding: 20px;
-    margin-bottom: 20px;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.app-card:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
-}
-
-/* Job title / role */
-.app-title {
-    font-size: 22px;
+/* Back to Dashboard button  */
+.status-header .btn-primary {
+    background: linear-gradient(135deg, #4e73df, #224abe);
+    border: none;
+    padding: 14px 32px;   
+    border-radius: 6px;   
     font-weight: 600;
-    margin-bottom: 8px;
-    color: #333333;
+    font-size: 15px;     
+    color: #fff;
+    box-shadow: 0 6px 16px rgba(34, 74, 190, 0.25);
+    transition: all 0.3s ease;
+}
+.status-header .btn-primary:hover {
+    background: linear-gradient(135deg, #224abe, #1d3bb8);
+    box-shadow: 0 8px 20px rgba(34, 74, 190, 0.35);
+    transform: translateY(-2px);
 }
 
-/* Details: Company, Applied On, Status */
-.app-details p {
-    margin: 4px 0;
-    font-size: 16px;
-    color: #555555;
-}
 
-.app-details strong {
-    color: #333333;
+/* Cards */
+.status-card {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 25px;
+    margin-bottom: 20px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: 0.3s ease;
 }
-
-/* Status badge */
-.status-badge {
-    display: inline-block;
-    padding: 4px 10px;
-    border-radius: 20px;
+.status-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+}
+.status-left h5 {
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+.company {
+    margin-bottom: 4px;
+    color: #6c757d;
+}
+.applied-date {
     font-size: 14px;
-    font-weight: 500;
+    color: #888;
+}
+
+/* Modern Status Badges (rectangular, subtle gradient) */
+.badge-modern {
+    padding: 8px 20px;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 13px;
+    display: inline-flex;
+    align-items: center;
+    margin-bottom: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
+}
+
+/* Status-specific styles */
+.badge-shortlisted {
+    background: linear-gradient(135deg, #4e73df, #224abe);
     color: #fff;
 }
-
-/* .status-applied { background-color: #007bff; }
-.status-pending { background-color: #ffc107; }
-.status-selected { background-color: #28a745; }
-.status-rejected { background-color: #dc3545; } 
-.status-withdrawn { background-color: #6c757d; } */
-
-.status-pending { background: #ffc107; color: #000; }
-.status-shortlisted { background: #0d6efd; color: white; }
-.status-rejected { background: #dc3545; color: white; }
-.status-withdrawn { background: #6c757d; color: white; }
-.status-viewed {
-    background-color: #0dcaf0;
-    color: rgb(255, 255, 255);
+.badge-rejected {
+    background: linear-gradient(135deg, #dc3545, #a71d2a);
+    color: #fff;
+}
+.badge-viewed {
+    background: linear-gradient(135deg, #0dcaf0, #0a8fb0);
+    color: #fff;
+}
+.badge-pending {
+    background: linear-gradient(135deg, #ffc107, #d39e00);
+    color: #000;
 }
 
-/* Withdraw button */
-.actions {
-    margin-top: 12px;
-}
-
-.btn-withdraw {
-    background-color: #dc3545;
+/* Withdraw Button - matches global buttons */
+.withdraw-modern {
+    background: linear-gradient(135deg, #dc3545, #a71d2a);
     color: #fff;
     border: none;
-    padding: 8px 16px;
+    padding: 8px 20px;
     border-radius: 6px;
-    font-size: 14px;
+    font-weight: 600;
+    font-size: 13px;
     cursor: pointer;
+    box-shadow: 0 4px 10px rgba(220, 53, 69, 0.15);
+    transition: all 0.3s ease;
+}
+.withdraw-modern:hover {
+    background: #a71d2a;
+    box-shadow: 0 6px 14px rgba(220, 53, 69, 0.25);
 }
 
-.btn-withdraw:hover {
-    background-color: #c82333;
-}
-
-/* Responsive */
-@media (max-width: 600px) {
-    .app-title {
-        font-size: 20px;
+/* Animation */
+@keyframes fadeDown {
+    from {
+        opacity: 0;
+        transform: translateY(-8px);
     }
-    .app-details p {
-        font-size: 14px;
-    }
-    .btn-withdraw {
-        padding: 6px 12px;
-        font-size: 13px;
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
 }

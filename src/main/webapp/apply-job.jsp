@@ -20,62 +20,105 @@
 <head>
     <title>Apply for Job</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/applyJob.css">
 </head>
 
-<body class="container mt-5">
+<body>
+    <div class="container apply-container">
 
     <!-- NAVBAR -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-    <div class="container">
-        <a class="navbar-brand" href="#">Nexthire</a>
-        <ul class="navbar-nav ms-auto">
-            <li class="nav-item">
-                <span class="nav-link">Welcome, <%= user.getName() %></span>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="logout.jsp">Logout</a>
-            </li>
-        </ul>
-    </div>
-</nav>
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="job-list.jsp">NextHire</a>
+    
+            <div class="dropdown ms-auto">
+                <a class="nav-link dropdown-toggle user-toggle"
+                   href="#" data-bs-toggle="dropdown">
+                    <i class="bi bi-person-circle me-2"></i>
+                    <span><%= user.getName() %></span>
+                </a>
+    
+                <ul class="dropdown-menu dropdown-menu-end custom-dropdown">
+                    <li class="dropdown-header">
+                        <strong><%= user.getName() %></strong><br>
+                        <small class="text-muted">Apply for this opportunity</small>
+                    </li>
+    
+                    <li><hr class="dropdown-divider"></li>
+    
+                    <li>
+                        <a class="dropdown-item" href="job-list.jsp">
+                            <i class="bi bi-grid me-2"></i> Dashboard
+                        </a>
+                    </li>
+    
+                    <li>
+                        <a class="dropdown-item" href="status.jsp">
+                            <i class="bi bi-briefcase me-2"></i> My Applications
+                        </a>
+                    </li>
+    
+                    <li><hr class="dropdown-divider"></li>
+    
+                    <li>
+                        <a class="dropdown-item logout-item" href="logout.jsp">
+                            <i class="bi bi-box-arrow-right me-2"></i> Logout
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
 
 <!-- Job Details Card -->
-<div class="card mb-4 shadow-sm">
-    <div class="card-body">
-      <h3 class="card-title text-primary"><%= job.getTitle() %></h3>
-      <h6 class="card-subtitle mb-2 text-muted">
-        <i class="bi bi-building"></i> <%= job.getCompany() != null ? job.getCompany() : "Not specified" %>
-      </h6>
-      <hr>
-  
-      <p><i class="bi bi-briefcase"></i> <b>Experience:</b>
-        <%= job.getExperience() != null ? job.getExperience() + " years" : "Not specified" %>
-      </p>
-  
-      <p><i class="bi bi-geo-alt"></i> <b>Location:</b>
-        <%= job.getLocation() != null ? job.getLocation() : "Not specified" %>
-      </p>
-  
-      <p><i class="bi bi-currency-dollar"></i> <b>Salary:</b>
-        <%= job.getSalaryRange() != null ? job.getSalaryRange() : "Not disclosed" %>
-      </p>
-  
-      <p><i class="bi bi-lightbulb"></i> <b>Skills:</b>
-        <%= job.getSkills() != null ? job.getSkills() : "As per JD" %>
-      </p>
-  
-      <hr>
-      <h5>Description</h5>
-      <div class="job-description"><%= job.getDescription() %></div>
+<div class="job-card-modern">
+
+    <div class="job-header">
+        <div>
+            <h3><%= job.getTitle() %></h3>
+            <p class="company">
+                <i class="bi bi-building"></i>
+                <%= job.getCompany() != null ? job.getCompany() : "Not specified" %>
+            </p>
+        </div>
     </div>
-  </div>  
+
+    <div class="job-meta">
+        <span><i class="bi bi-briefcase"></i>
+            <%= job.getExperience() != null ? job.getExperience() + " yrs" : "Not specified" %>
+        </span>
+
+        <span><i class="bi bi-geo-alt"></i>
+            <%= job.getLocation() != null ? job.getLocation() : "Not specified" %>
+        </span>
+
+        <span><i class="bi bi-currency-dollar"></i>
+            <%= job.getSalaryRange() != null ? job.getSalaryRange() : "Not disclosed" %>
+        </span>
+    </div>
+
+    <div class="job-description-modern">
+        <h6>Description</h6>
+        <p><%= job.getDescription() %></p>
+    </div>
+
+</div>  
     
 
 <hr>
 
-<h5 class="mt-4">Apply for this job</h5>
+<div class="apply-form-card">
+
+    <h4 class="mb-4">
+        <i class="bi bi-send me-2"></i>Submit Your Application
+    </h4>
+
+    <form action="apply" method="post" enctype="multipart/form-data">
+
+        <input type="hidden" name="jobId" value="<%= job.getId() %>">
 
 <form action="apply" method="post" enctype="multipart/form-data" class="p-4 bg-light rounded shadow-sm">
 
@@ -116,11 +159,18 @@
         <input type="file" id="resume" name="resume" class="form-control" accept="application/pdf" required>
     </div>
 
-    <button type="submit" class="btn btn-success">Submit Application</button>
-    <a href="job-list.jsp" class="btn btn-outline-secondary ms-2">Cancel</a>
+    <div class="mt-4">
+        <button type="submit" class="btn btn-primary px-4">
+            Submit Application
+        </button>
+        <a href="job-list.jsp" class="btn btn-outline-secondary ms-2">
+            Cancel
+        </a>
+    </div>
+
 </form>
-
-
-
+</div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
