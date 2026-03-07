@@ -34,7 +34,7 @@ This project is currently under **active development**. Features are being added
 
 ## 🛠 Tech Stack 
   
-- **Backend**: Java Servlets, Hibernate, JDBC 
+- **Backend**: Java Servlets, Hibernate 
 - **Frontend**: JSP, HTML, CSS, JavaScript 
 - **Database**: PostgreSQL 
 - **Build Tool**: Maven 
