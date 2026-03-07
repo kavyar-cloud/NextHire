@@ -39,7 +39,7 @@ public class LoginServlet extends HttpServlet {
                 response.sendRedirect(request.getContextPath() + "/login.jsp?error=Unknown role");
             }
         } else {
-            response.sendRedirect(request.getContextPath() + "/login.jsp?error=Invalid credentials");
+            response.sendRedirect(request.getContextPath() + "/login.jsp?error=Invalid email or password");
         }
     }
 }

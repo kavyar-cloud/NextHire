@@ -158,4 +158,35 @@ body:not(.home) .btn-primary-custom:hover {
     box-shadow: 0 6px 16px rgba(46, 125, 50, 0.25);
 }
 
-/* =================
+
+.home .hero-section .btn-primary,
+.home .hero-section .btn-outline-light {
+    padding: 14px 32px;   
+    font-size: 16px;      
+    font-weight: 600;    
+    border-radius: 8px;  
+    min-width: 180px;     
+    text-align: center;
+}
+
+/* ================= HERO CTA SIZE FIX ================= */
+.home .hero-section .btn-lg {
+    padding: 14px 32px !important;   /* force same padding */
+    font-size: 16px !important;      /* force same font size */
+    min-width: 180px;                /* equal width */
+    font-weight: 600;
+    border-radius: 8px;
+    text-align: center;
+}
+
+/* ================= HERO CTA SIZE FIX ================= */
+.hero-section .btn-primary.btn-lg,
+.hero-section .btn-outline-light.btn-lg {
+    padding: 14px 32px !important;   /* identical padding */
+    font-size: 16px !important;      /* identical font size */
+    font-weight: 600 !important;     /* identical weight */
+    border-radius: 8px !important;   /* identical corners */
+    min-width: 180px;                /* identical width */
+    text-align: center;
+}
+

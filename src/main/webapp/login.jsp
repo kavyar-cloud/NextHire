@@ -88,6 +88,20 @@
                         Enter your credentials to continue
                     </p>
 
+                    <%
+                        String error = request.getParameter("error");
+                        if(error != null){
+                    %>
+
+                    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                        <%= error %>
+                        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                    </div>
+
+                    <%
+                    }
+                    %>
+
                     <form action="login" method="post">
 
                         <div class="mb-3">
@@ -154,6 +168,7 @@
         }
     }
     </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
 </html>
