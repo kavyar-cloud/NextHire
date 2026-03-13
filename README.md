@@ -41,20 +41,6 @@ This project is currently under **active development**. Features are being added
 - **Server**: Apache Tomcat
 
 ---
-
-## ⚙️ Setup Instructions 
-
-1. Clone the repository: ```bash git clone https://github.com/kavyar-cloud/NextHire.git
-
-2. Import into IntelliJ IDEA or VS Code.
-
-3. Configure PostgreSQL database and update hibernate.cfg.xml
-
-4. Build with Maven: mvn clean install
-
-5. Deploy the WAR file to Tomcat and access via: http://localhost:8080/NextHire
-
----
    
 ## License
    
